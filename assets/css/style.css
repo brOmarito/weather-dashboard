@@ -1,0 +1,8 @@
+.forecast-card p {
+    /* margin: 20px; */
+    font-size: 12px;
+}
+
+.search-history {
+    flex-direction: column;
+}

@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+                <span>Weather Dashboard</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="py-5 container">
+            <div class="row">
+                <div class="col-sm-4 search-area">
+                    <div class="row">
+                        <form>
+                            <div class="mb-3">
+                                <label for="city-input" class="form-labl">Search for a City:</label>
+                                <input type="text" class="form-control" id="city-input">
+                            </div>
+                            <div class="d-grid">
+                                <button id="search-typed-city" type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <hr size="5">
+                    <div class="row">
+                        <div class="search-history d-grid gap-2"></div>
+                    </div>
+                </div>
+                <div class="col-md-8 results-area">
+                    <div class="row">
+                        <div class="card today-weather">
+                            <div class="card-body">
+                                <h2 id="current-city" class="card-title">Atlanta</h2>
+                                <p id="current-weather-section" class="card-text">
+                                    Temp: <span id="current-temp" class="temp-span">75</span>&deg;F<br>
+                                    Wind: <span id="current-wind">5.1</span> MPH<br>
+                                    Humidity: <span id="current-humidity">35</span> %<br>
+                                    UV Index: <span id="current-uv-index" class="btn btn-success disabled">MED</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>5-Day Forecast:</h3>
+                        <div class="card-group">
+                            <div id="day-1-card" class="card forecast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CurrDay+1</h5>
+                                    <p class="card-text weather-info-section">
+                                        Temp: <span class="temp-section">75</span>&deg;F<br>
+                                        Wind: <span class="wind-section">5.1</span> MPH<br>
+                                        Humidity: <span class="humidity-section">35</span> %<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="day-2-card" class="card forecast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CurrDay+2</h5>
+                                    <p class="card-text weather-info-section">
+                                        Temp: <span class="temp-section">75</span>&deg;F<br>
+                                        Wind: <span class="wind-section">5.1</span> MPH<br>
+                                        Humidity: <span class="humidity-section">35</span> %<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="day-3-card" class="card forecast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CurrDay+3</h5>
+                                    <p class="card-text weather-info-section">
+                                        Temp: <span class="temp-section">75</span>&deg;F<br>
+                                        Wind: <span class="wind-section">5.1</span> MPH<br>
+                                        Humidity: <span class="humidity-section">35</span> %<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="day-4-card" class="card forecast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CurrDay+4</h5>
+                                    <p class="card-text weather-info-section">
+                                        Temp: <span class="temp-section">75</span>&deg;F<br>
+                                        Wind: <span class="wind-section">5.1</span> MPH<br>
+                                        Humidity: <span class="humidity-section">35</span> %<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="day-5-card" class="card forecast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CurrDay+5</h5>
+                                    <p class="card-text weather-info-section">
+                                        Temp: <span class="temp-section">75</span>&deg;F<br>
+                                        Wind: <span class="wind-section">5.1</span> MPH<br>
+                                        Humidity: <span class="humidity-section">35</span> %<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
