@@ -6,3 +6,17 @@
 .search-history {
     flex-direction: column;
 }
+
+#current-city,
+.weather-icon {
+    display: inline-block;
+}
+
+.weather-icon {
+    margin-left: 10px;
+}
+
+.weather-icon-small {
+    padding-left: auto;
+    padding-right: auto;
+}

@@ -29,8 +29,13 @@ function updateCurrentWeatherCard(city) {
     document.querySelector('#current-temp').textContent = Math.floor(weatherData.main.temp);
     document.querySelector('#current-wind').textContent = weatherData.wind.speed;
     document.querySelector('#current-humidity').textContent = Math.floor(weatherData.main.humidity);
+    document.querySelector('#today-icon').setAttribute("src", getWeatherIcon(weatherData));
     handlehistoricSearches(city);
     getFiveDayForecast();
+}
+
+function getWeatherIcon(dayData) {
+    return "http://openweathermap.org/img/w/" + dayData.weather[0].icon + ".png";
 }
 
 function updateFiveDayForecast() {
@@ -46,6 +51,7 @@ function updateFutureDayCard(index, dayForecast) {
     thisDayCard.querySelector(".temp-section").textContent = Math.floor(dayForecast.temp.day);
     thisDayCard.querySelector(".wind-section").textContent = dayForecast.wind_speed;
     thisDayCard.querySelector(".humidity-section").textContent = dayForecast.humidity;
+    thisDayCard.querySelector(".weather-icon").setAttribute("src", getWeatherIcon(dayForecast));
 }
 
 function handleUvColor() {
@@ -59,7 +65,6 @@ function handleUvColor() {
     } else if (forecastData.current.uvi > 6) {
         uvButton.classList.add('btn-danger');
     }
-    
 }
 
 function addSearchedButton(city) {
