@@ -12,3 +12,4 @@ The main point behind this project was to get some practice calling APIs. I deci
 Link to the deployed application: https://bromarito.github.io/weather-dashboard/
 
 ![Snapshot of the deployed application](/assets/pics/snapshot.PNG)
+![Snapshot of the deployed application 2](/assets/pics/snapshot2.PNG)
